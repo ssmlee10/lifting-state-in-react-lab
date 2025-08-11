@@ -1,11 +1,17 @@
 const IngredientList = (props) => {
   return (
   <ul>
-    {props.IngredientList.map((ingredient, index) => {
-        return <li key={index}>{ingredient}</li>
-    })};
+    {props.availableIngredients.map((ingredient, index) => (
+    <li style={{ backgroundColor: ingredient.color }}>
+      {ingredient.name}
+    </li>
+    ))};
   </ul>
   );
 };
 
 export default IngredientList;
+
+// curly braces, need a return
+// curly braces for console.logs
+// () after =>, don't need return

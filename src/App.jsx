@@ -1,7 +1,7 @@
-import "./App.css";
 import BurgerStack from "./components/BurkerStack/BurgerStack.jsx";
 import IngredientList from "./components/IngredientList/IngredientList";
 import { useState } from 'react';
+import "./App.css";
 
 const App = () => {
   const availableIngredients = [
@@ -23,12 +23,20 @@ const App = () => {
 
 const [stack, setStack] = useState([]);
 
+const addToBurger = () => {
+
+};
+
+const removeFromBurger = () => {
+
+};
+
   return (
     <main>
       <h1>Burger Stacker</h1>
       <section>
         <>
-        <IngredientList />
+        <IngredientList availableIngredients={availableIngredients}/>
           <BurgerStack />
         </>
       </section>
