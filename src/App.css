@@ -74,6 +74,7 @@ li {
 button {
   cursor: pointer;
   border-radius: 8px;
+  color: #fff;
   background-color: #1a1a1a;
   border: 1px solid transparent;
 }

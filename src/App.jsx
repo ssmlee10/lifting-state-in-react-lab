@@ -23,12 +23,19 @@ const App = () => {
 
 const [stack, setStack] = useState([]);
 
-const addToBurger = () => {
+const addToBurger = (newIngredient) => {
+  console.log([...stack, newIngredient]);
+  const burgerStack = [...stack, newIngredient];
 
+  setStack(burgerStack);
 };
 
-const removeFromBurger = () => {
+const removeFromBurger = (ingredient) => {
+  console.log(ingredient);
+const removeIngredient = stack.filter((stack, index) => stack.name !== ingredient.name);
+console.log(removeIngredient);
 
+setStack(removeIngredient);
 };
 
   return (
@@ -36,8 +43,12 @@ const removeFromBurger = () => {
       <h1>Burger Stacker</h1>
       <section>
         <>
-        <IngredientList availableIngredients={availableIngredients}/>
-          <BurgerStack />
+        <IngredientList 
+        availableIngredients={availableIngredients}
+        addToBurger={addToBurger}/>
+          <BurgerStack 
+          stack={stack} 
+          removeFromBurger={removeFromBurger}/>
         </>
       </section>
     </main>
